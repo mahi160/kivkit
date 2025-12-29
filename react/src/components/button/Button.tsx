@@ -8,7 +8,7 @@ export type IButtonProps = ButtonBase.Props & {
   shape?: "pill" | "circle" | "sharp";
 };
 
-export function Button(props: IButtonProps) {
+function Button(props: IButtonProps) {
   const { variant, color = "primary", size, shape, className, ...rest } = props;
   return (
     <ButtonBase
@@ -21,3 +21,5 @@ export function Button(props: IButtonProps) {
     />
   );
 }
+
+export { Button };

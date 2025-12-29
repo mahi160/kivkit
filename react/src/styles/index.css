@@ -14,6 +14,9 @@
   --danger: var(--alert);
   --danger-foreground: var(--contrast);
 
+  --muted: oklch(from var(--content) l c h / 0.6);
+  --muted-foreground: oklch(from var(--content) l c h / 0.8);
+
   --focus: oklch(from var(--primary) l c h / 0.5);
   --border: oklch(from var(--content) l c h / 0.2);
 

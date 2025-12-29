@@ -2,7 +2,7 @@ import { Accordion as AccordionBase } from "@base-ui/react";
 import style from "./Accordion.module.css";
 import { IconChevronDown } from "@tabler/icons-react";
 
-export function Accordion({ className, ...props }: AccordionBase.Root.Props) {
+function Accordion({ className, ...props }: AccordionBase.Root.Props) {
   return (
     <AccordionBase.Root
       className={`${style.accordion} ${className || ""}`}
@@ -11,10 +11,7 @@ export function Accordion({ className, ...props }: AccordionBase.Root.Props) {
   );
 }
 
-export function AccordionItem({
-  className,
-  ...props
-}: AccordionBase.Item.Props) {
+function AccordionItem({ className, ...props }: AccordionBase.Item.Props) {
   return (
     <AccordionBase.Item
       className={`${style.accordionItem} ${className || ""}`}
@@ -23,7 +20,7 @@ export function AccordionItem({
   );
 }
 
-export function AccordionTrigger({
+function AccordionTrigger({
   className,
   children,
   ...props
@@ -41,7 +38,7 @@ export function AccordionTrigger({
   );
 }
 
-export function AccordionPanel({
+function AccordionPanel({
   className,
   children,
   ...props
@@ -55,3 +52,5 @@ export function AccordionPanel({
     </AccordionBase.Panel>
   );
 }
+
+export { Accordion, AccordionItem, AccordionTrigger, AccordionPanel };
