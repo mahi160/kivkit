@@ -7,7 +7,7 @@
     "lint": "eslint .",
     "dev": "storybook dev -p 9000",
     "build": "storybook build",
-    "add": "node scripts/newComp.js"
+    "nc": "node scripts/newComp.js"
   },
   "dependencies": {
     "@base-ui/react": "^1.0.0",
