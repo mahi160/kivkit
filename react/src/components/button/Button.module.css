@@ -1,4 +1,4 @@
-.Button {
+.button {
   --bg: var(--primary);
   --fg: var(--primary-foreground);
 
@@ -48,16 +48,16 @@
   }
 }
 
-.Button[data-color="secondary"] {
+.button[data-color="secondary"] {
   --bg: var(--secondary);
   --fg: var(--secondary-foreground);
 }
-.Button[data-color="danger"] {
+.button[data-color="danger"] {
   --bg: var(--danger);
   --fg: var(--danger-foreground);
 }
 
-.Button[data-variant="outline"] {
+.button[data-variant="outline"] {
   background-color: transparent;
   color: var(--bg);
   border-color: var(--bg);
@@ -65,14 +65,14 @@
     background-color: oklch(from var(--bg) l c h / 0.05);
   }
 }
-.Button[data-variant="ghost"] {
+.button[data-variant="ghost"] {
   background-color: transparent;
   color: var(--bg);
   &:hover:not(:disabled) {
     background-color: oklch(from var(--bg) l c h / 0.1);
   }
 }
-.Button[data-variant="link"] {
+.button[data-variant="link"] {
   background-color: transparent;
   color: var(--bg);
   text-underline-offset: 0.1rem;
@@ -83,7 +83,7 @@
   }
 }
 
-.Button[data-size="sm"] {
+.button[data-size="sm"] {
   block-size: 1.5rem;
   font-size: 0.75rem;
   padding-inline: var(--spacing);
@@ -93,15 +93,15 @@
     block-size: 0.75rem;
   }
 }
-.Button[data-size="lg"] {
+.button[data-size="lg"] {
   block-size: 2.25rem;
   padding-inline: calc(var(--spacing) * 2.5);
 }
-.Button[data-size="icon"] {
+.button[data-size="icon"] {
   inline-size: 2rem;
   padding: 0;
 }
-.Button[data-size="icon-sm"] {
+.button[data-size="icon-sm"] {
   inline-size: 1.5rem;
   block-size: 1.5rem;
   font-size: 0.75rem;
@@ -111,7 +111,7 @@
     block-size: 0.75rem;
   }
 }
-.Button[data-size="icon-lg"] {
+.button[data-size="icon-lg"] {
   inline-size: 2.25rem;
   block-size: 2.25rem;
   font-size: 1rem;
@@ -122,12 +122,12 @@
   }
 }
 
-.Button[data-shape="pill"] {
+.button[data-shape="pill"] {
   border-radius: 100svh;
 }
-.Button[data-shape="circle"] {
+.button[data-shape="circle"] {
   border-radius: 50%;
 }
-.Button[data-shape="sharp"] {
+.button[data-shape="sharp"] {
   border-radius: 0;
 }

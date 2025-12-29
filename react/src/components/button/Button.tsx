@@ -7,17 +7,12 @@ export type IButtonProps = ButtonBase.Props & {
   size?: "sm" | "lg" | "icon" | "icon-sm" | "icon-lg";
   shape?: "pill" | "circle" | "sharp";
 };
-export const Button: React.FC<IButtonProps> = ({
-  variant,
-  color = "primary",
-  size,
-  shape,
-  className,
-  ...rest
-}) => {
+
+export function Button(props: IButtonProps) {
+  const { variant, color = "primary", size, shape, className, ...rest } = props;
   return (
     <ButtonBase
-      className={styles.Button + " " + className}
+      className={`${styles.button} ${className || ""}`}
       data-size={size}
       data-variant={variant}
       data-shape={shape}
@@ -25,4 +20,4 @@ export const Button: React.FC<IButtonProps> = ({
       {...rest}
     />
   );
-};
+}
