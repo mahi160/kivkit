@@ -1,0 +1,73 @@
+.Checkbox {
+  --fg: var(--primary-foreground);
+  --bg: var(--primary);
+
+  inline-size: 18px;
+  block-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  border-radius: 0.25rem;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+
+  cursor: pointer;
+  transition: all var(--duration) ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  &[data-unchecked] {
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+  }
+
+  &[data-checked],
+  &[data-indeterminate] {
+    background-color: var(--bg);
+    border-color: var(--bg);
+    color: var(--fg);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.Checkbox {
+  &[data-color="danger"] {
+    --fg: var(--danger-foreground);
+    --bg: var(--danger);
+  }
+  &[data-color="secondary"] {
+    --fg: var(--secondary-foreground);
+    --bg: var(--secondary);
+  }
+}
+
+.Indicator {
+  opacity: 0;
+  transition: opacity var(--duration) ease-in-out;
+
+  &[data-checked],
+  &[data-indeterminate] {
+    opacity: 1;
+  }
+}
+
+.Group {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.25rem;
+}
