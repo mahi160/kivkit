@@ -1,0 +1,73 @@
+.Input {
+  border-radius: var(--radius);
+  border: 1px solid var(--muted-foreground);
+  background-color: transparent;
+  padding-inline: 0.75rem;
+  padding-block: 0.5rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition-property: background-color, border-color, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--duration);
+  color: var(--foreground);
+}
+
+.Input::placeholder {
+  opacity: 0.5;
+}
+
+.Input:focus-visible {
+  border-color: var(--focus);
+  box-shadow: 0 0 0 3px oklch(from var(--focus) l c h / 0.5);
+}
+
+.Input[aria-invalid="true"] {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px oklch(from var(--danger) l c h / 0.2);
+}
+
+.Input[aria-invalid="true"]:focus-visible {
+  box-shadow: 0 0 0 3px oklch(from var(--danger) l c h / 0.2);
+}
+
+.Input:disabled {
+  background-color: oklch(from var(--background) l c h / 0.5);
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.Input::file-selector-button {
+  display: inline-flex;
+  height: 1.5rem;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+@media (max-width: 768px) {
+  .Input {
+    font-size: 0.875rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .Input {
+    background-color: oklch(from var(--background) l c h / 0.3);
+  }
+
+  .Input:disabled {
+    background-color: oklch(from var(--background) l c h / 0.8);
+  }
+
+  .Input[aria-invalid="true"] {
+    border-color: oklch(from var(--danger) l c h / 0.5);
+  }
+
+  .Input[aria-invalid="true"]:focus-visible {
+    box-shadow: 0 0 0 3px oklch(from var(--danger) l c h / 0.4);
+  }
+}

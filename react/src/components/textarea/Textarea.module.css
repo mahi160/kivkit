@@ -1,0 +1,64 @@
+.Textarea {
+  width: 100%;
+  min-height: 4rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background-color: transparent;
+  padding: 0.5rem 0.625rem;
+  font-size: 1rem;
+  outline: none;
+  transition-property: background-color, border-color, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--duration);
+  color: var(--foreground);
+  display: flex;
+  field-sizing: content;
+}
+
+.Textarea::placeholder {
+  color: var(--muted-foreground);
+}
+
+.Textarea:focus-visible {
+  border-color: var(--focus);
+  box-shadow: 0 0 0 3px oklch(from var(--focus) l c h / 0.5);
+}
+
+.Textarea[aria-invalid="true"] {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px oklch(from var(--danger) l c h / 0.2);
+}
+
+.Textarea[aria-invalid="true"]:focus-visible {
+  box-shadow: 0 0 0 3px oklch(from var(--danger) l c h / 0.2);
+}
+
+.Textarea:disabled {
+  background-color: oklch(from var(--background) l c h / 0.5);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .Textarea {
+    font-size: 0.875rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .Textarea {
+    background-color: oklch(from var(--background) l c h / 0.3);
+  }
+
+  .Textarea:disabled {
+    background-color: oklch(from var(--background) l c h / 0.8);
+  }
+
+  .Textarea[aria-invalid="true"] {
+    border-color: oklch(from var(--danger) l c h / 0.5);
+  }
+
+  .Textarea[aria-invalid="true"]:focus-visible {
+    box-shadow: 0 0 0 3px oklch(from var(--danger) l c h / 0.4);
+  }
+}
