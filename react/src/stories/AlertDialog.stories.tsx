@@ -10,7 +10,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "../components/alertDialog/AlertDialog";
-import { Button } from "../components/button/Button";
 
 const meta = {
   component: AlertDialog,
@@ -24,7 +23,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: (args) => (
     <AlertDialog {...args}>
-      <AlertDialogTrigger render={() => <Button>Hello</Button>} />
+      <AlertDialogTrigger>Open</AlertDialogTrigger>
       <AlertDialogPopup>
         <AlertDialogHeader>
           <AlertDialogTitle>How are you?</AlertDialogTitle>

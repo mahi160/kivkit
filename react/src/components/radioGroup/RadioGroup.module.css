@@ -1,0 +1,85 @@
+.RadioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 2);
+}
+
+.Item {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  cursor: pointer;
+  user-select: none;
+  color: var(--foreground);
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.5;
+  outline: none;
+}
+
+/* The outer circle (well) */
+.Item::before {
+  content: "";
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  transition: all var(--duration);
+  flex-shrink: 0;
+}
+
+.Item:hover::before {
+  border-color: var(--muted-foreground);
+}
+
+.Item[data-state="checked"]::before {
+  border-color: var(--primary);
+}
+
+.Item:focus-visible::before {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-color: var(--primary);
+}
+
+/* The inner dot wrapper */
+.Indicator {
+  position: absolute;
+  left: 0;
+  /* Match the size of ::before to center the dot correctly */
+  width: 1.125rem;
+  height: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Hide the placeholder text "H" */
+  font-size: 0;
+  color: transparent;
+  pointer-events: none;
+}
+
+/* The actual dot */
+.Indicator::after {
+  content: "";
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+  animation: scaleIn var(--duration) ease-out;
+}
+
+.Item[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
