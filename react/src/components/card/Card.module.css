@@ -1,0 +1,54 @@
+.Card {
+  background-color: var(--background);
+  color: var(--foreground);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 6);
+  padding-top: calc(var(--spacing) * 6);
+  padding-bottom: calc(var(--spacing) * 6);
+}
+
+.Header {
+  display: grid;
+  grid-template-rows: auto auto;
+  align-items: start;
+  gap: calc(var(--spacing) * 2);
+  padding-left: calc(var(--spacing) * 6);
+  padding-right: calc(var(--spacing) * 6);
+}
+
+.Header:has([data-slot="card-action"]) {
+  grid-template-columns: 1fr auto;
+}
+
+.Title {
+  font-weight: 600;
+  line-height: 1;
+}
+
+.Description {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.Action {
+  grid-column-start: 2;
+  grid-row: 1 / span 2;
+  align-self: start;
+  justify-self: end;
+}
+
+.Content {
+  padding-left: calc(var(--spacing) * 6);
+  padding-right: calc(var(--spacing) * 6);
+}
+
+.Footer {
+  display: flex;
+  align-items: center;
+  padding-left: calc(var(--spacing) * 6);
+  padding-right: calc(var(--spacing) * 6);
+}
