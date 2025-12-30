@@ -14,8 +14,8 @@
   --danger: var(--alert);
   --danger-foreground: var(--contrast);
 
-  --muted: oklch(from var(--content) l c h / 0.6);
-  --muted-foreground: oklch(from var(--content) l c h / 0.8);
+  --muted: oklch(from var(--content) l c h / 0.1);
+  --muted-foreground: oklch(from var(--content) l c h / 0.6);
 
   --focus: oklch(from var(--primary) l c h / 0.5);
   --border: oklch(from var(--content) l c h / 0.2);
@@ -25,6 +25,7 @@
 
   --shadow: 2px 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.4);
 }
+
 html {
   font-size: 16px;
 }

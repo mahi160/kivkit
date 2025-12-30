@@ -25,7 +25,8 @@ if (!/^[a-zA-Z][a-zA-Z0-9]*$/.test(componentName)) {
 
 // Convert names
 const folderName = componentName; // camelCase folder
-const titleCaseName = componentName.charAt(0).toUpperCase() + componentName.slice(1); // TitleCase
+const titleCaseName =
+  componentName.charAt(0).toUpperCase() + componentName.slice(1); // TitleCase
 
 const srcPath = path.join(__dirname, "../src");
 const componentsPath = path.join(srcPath, "components");
@@ -45,9 +46,11 @@ try {
   // Create TSX file
   const tsxContent = `import styles from "./${titleCaseName}.module.css";
 
-export function ${titleCaseName}() {
+function ${titleCaseName}() {
   return <div className={styles.${titleCaseName}}>${titleCaseName}</div>;
 }
+
+export { ${titleCaseName} };
 `;
 
   fs.writeFileSync(
@@ -66,7 +69,7 @@ export function ${titleCaseName}() {
   );
 
   // Create story file
-  const storyContent = `import type { Meta, StoryObj } from "@storybook/react";
+  const storyContent = `import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ${titleCaseName} } from "../components/${folderName}/${titleCaseName}";
 
 const meta = {

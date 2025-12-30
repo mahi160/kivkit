@@ -4,7 +4,7 @@ import { Checkbox } from "../components/checkbox/Checkbox";
 import { Input } from "../components/input/Input";
 
 const meta = {
-  title: "Components/Label",
+  title: "Label",
   component: Label,
   parameters: {
     layout: "centered",
