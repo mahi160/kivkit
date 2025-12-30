@@ -10,7 +10,7 @@ import {
 } from "../components/pagination/Pagination";
 
 const meta = {
-  title: "Components/Pagination",
+  title: "Pagination",
   component: Pagination,
   parameters: {
     layout: "centered",

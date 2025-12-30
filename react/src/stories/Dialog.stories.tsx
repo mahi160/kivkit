@@ -10,6 +10,7 @@ import {
   DialogClose,
 } from "../components/dialog/Dialog";
 import { Input } from "../components/input/Input";
+import { Button } from "../components/button/Button";
 
 const meta = {
   title: "Dialog",
@@ -25,7 +26,10 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: () => (
     <Dialog>
-      <DialogTrigger>Edit Profile</DialogTrigger>
+      <DialogTrigger
+        nativeButton={false}
+        render={(prop) => <Button {...prop}>Edit</Button>}
+      ></DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Edit profile</DialogTitle>
@@ -68,7 +72,10 @@ export const Default: Story = {
           </div>
         </div>
         <DialogFooter>
-          <DialogClose>Save changes</DialogClose>
+          <DialogClose
+            nativeButton={false}
+            render={(props) => <Button {...props}>Save changes</Button>}
+          />
         </DialogFooter>
       </DialogContent>
     </Dialog>
