@@ -1,0 +1,23 @@
+.Label {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1;
+  font-weight: 500;
+  user-select: none;
+}
+
+/* Peer disabled states (mimicking peer-disabled:...) */
+:global(.peer):disabled ~ .Label,
+:global(.peer)[disabled] ~ .Label,
+:global(.peer)[data-disabled] ~ .Label {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Group disabled states (mimicking group-data-[disabled=true]:...) */
+:global([data-disabled="true"]) .Label {
+  pointer-events: none;
+  opacity: 0.5;
+}
