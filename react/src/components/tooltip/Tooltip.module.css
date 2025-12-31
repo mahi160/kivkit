@@ -1,0 +1,85 @@
+.Content {
+  background-color: var(--foreground);
+  color: var(--background);
+  z-index: 50;
+  width: fit-content;
+  border-radius: 0.375rem; /* rounded-md */
+  padding: 0.375rem 0.75rem; /* px-3 py-1.5 */
+  font-size: 0.75rem; /* text-xs */
+  line-height: 1rem;
+  text-wrap: balance;
+  transform-origin: var(--transform-origin);
+  animation: scaleIn var(--duration) ease-out;
+  box-shadow: var(--shadow);
+}
+
+.Content[data-state="closed"] {
+  animation: scaleOut var(--duration) ease-in;
+}
+
+/* Arrow styling */
+.Arrow {
+  fill: var(--foreground);
+  /* The Base UI Arrow component handles rotation and positioning, 
+     we just need to color the shape. */
+}
+
+/* Animations matching the requested slide behavior */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* Slide in animations based on side */
+.Content[data-side="bottom"] {
+  animation-name: slideInFromTop, scaleIn;
+}
+
+.Content[data-side="left"] {
+  animation-name: slideInFromRight, scaleIn;
+}
+
+.Content[data-side="right"] {
+  animation-name: slideInFromLeft, scaleIn;
+}
+
+.Content[data-side="top"] {
+  animation-name: slideInFromBottom, scaleIn;
+}
+
+@keyframes slideInFromTop {
+  from { transform: translateY(-0.5rem); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideInFromRight {
+  from { transform: translateX(0.5rem); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInFromLeft {
+  from { transform: translateX(-0.5rem); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInFromBottom {
+  from { transform: translateY(0.5rem); }
+  to { transform: translateY(0); }
+}
